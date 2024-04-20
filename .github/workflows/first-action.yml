@@ -8,5 +8,8 @@ jobs:
         run: |
           echo "Hello World!"
           pwd
+          whoami
+      - name: Get code
+        uses: actions/checkout@v3
       - name: Print goodbye
         run: echo "Done - bye!"
