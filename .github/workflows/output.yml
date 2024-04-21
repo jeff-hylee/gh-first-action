@@ -9,8 +9,8 @@ jobs:
       
     
   second-job:
+    needs: build
     runs-on: ubuntu-latest
     steps: 
       - name: post-build
-        needs: build
         run: echo "post build step"
