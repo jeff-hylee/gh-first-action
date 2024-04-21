@@ -9,7 +9,7 @@ jobs:
       
     
   second-job:
-    needs: build
+    needs: first-job
     runs-on: ubuntu-latest
     steps: 
       - name: post-build
