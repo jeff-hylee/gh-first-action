@@ -16,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: post-build
-        run: echo "${{ needs.first-job.outputs.uid }}"
+        run: echo "foo-${{ needs.first-job.outputs.uid }}"
