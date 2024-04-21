@@ -4,5 +4,7 @@ jobs:
   the-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
       - name: Print Contents of README.md
         run: cat README.md
