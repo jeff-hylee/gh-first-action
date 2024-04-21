@@ -1,0 +1,9 @@
+name: Another Workflow
+on: workflow_dispatch
+jobs:
+  init-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print FooBar
+        run: echo "FooBar"
+        
