@@ -3,11 +3,14 @@ on: [push, workflow_dispatch]
 jobs:
   first-job:
     runs-on: ubuntu-latest
+    outputs:
+      uid: $$ {{ steps.build.outputs.uid }}
+      foo: $$ {{ steps.build.outputs.foo }}
     steps:
       - name: build
-        run: echo "$RANDOM"
-      
-    
+        run: |
+          echo "uid=$RANDOM" >> GITHUB_OUTPUT
+          echo "foo=$RANDOM" >> GITHUB_OUTPUT
   second-job:
     needs: first-job
     runs-on: ubuntu-latest
