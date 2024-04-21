@@ -1,0 +1,16 @@
+name: Workflow with output
+on: [push, workflow_dispatch]
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: echo "$RANDOM"
+      
+    
+  second-job:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: post-build
+        needs: build
+        run: echo "post build step"
